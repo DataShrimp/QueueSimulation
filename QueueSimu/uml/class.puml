@@ -1,0 +1,50 @@
+@startuml
+
+class Customer {
+int id
+arrive()
+depart()
+}
+
+class Server {
+ServerState state
+}
+
+enum ServerState {
+BUSY
+IDEL
+}
+
+class Experiment {
+double meanInterArrival
+double meanService
+double numDelaysRequired
+}
+
+class SimuEngine {
+double[] nextEventTime
+initialize()
+run()
+report()
+}
+
+class SimuTimer {
+double simuTime
+double timing()
+}
+
+class SimuEvent {
+double time
+EventType type
+}
+
+enum EventType {
+ARRIVAL,
+DEPARTURE
+}
+
+class RandomGenerater {
+getExpon(float mean)
+}
+
+@enduml
